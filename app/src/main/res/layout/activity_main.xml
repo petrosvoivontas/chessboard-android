@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.example.chessboard.ui.ChessView
+        android:id="@+id/chessboard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/chessboard_size_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/chessboard_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chessboard" />
+
+    <TextView
+        android:id="@+id/chessboard_size_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/chessboard_size_label"
+        app:layout_constraintLeft_toRightOf="@id/chessboard_size_label"
+        app:layout_constraintTop_toTopOf="@id/chessboard_size_label"
+        tools:text="8" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/chessboard_size_slider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:stepSize="@integer/chessboard_size_step"
+        android:valueFrom="@integer/chessboard_size_from"
+        android:valueTo="@integer/chessboard_size_to"
+        app:layout_constraintBottom_toBottomOf="@id/chessboard_size_value"
+        app:layout_constraintLeft_toRightOf="@id/chessboard_size_value"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/chessboard_size_value" />
+
+    <TextView
+        android:id="@+id/max_moves_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/max_moves"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_size_label" />
+
+    <ImageButton
+        android:id="@+id/max_moves_decrease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/transparent"
+        android:src="@drawable/ic_remove_circle_outline_24"
+        app:layout_constraintBottom_toBottomOf="@id/max_moves_label"
+        app:layout_constraintRight_toLeftOf="@id/max_moves_value"
+        app:layout_constraintTop_toTopOf="@id/max_moves_label"
+        app:tint="@color/max_moves_buttons_state_list" />
+
+    <TextView
+        android:id="@+id/max_moves_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/max_moves_increase"
+        app:layout_constraintRight_toLeftOf="@id/max_moves_increase"
+        app:layout_constraintTop_toTopOf="@id/max_moves_increase"
+        tools:text="3" />
+
+    <ImageButton
+        android:id="@+id/max_moves_increase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/transparent"
+        android:src="@drawable/ic_add_circle_outline_24"
+        app:layout_constraintBottom_toBottomOf="@id/max_moves_label"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/max_moves_label"
+        app:tint="@color/purple_500" />
+
+    <Button
+        android:id="@+id/next_path_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:enabled="false"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="@id/reset_button"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/reset_button" />
+
+    <ProgressBar
+        android:id="@+id/path_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/next_path_button" />
+
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/reset"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/max_moves_label" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

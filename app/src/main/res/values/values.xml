@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="chessboard_size_from">6</integer>
+    <integer name="chessboard_size_to">16</integer>
+    <integer name="chessboard_size_step">1</integer>
+</resources>

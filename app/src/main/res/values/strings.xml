@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Chessboard</string>
+
+    <string name="chessboard_size">Chessboard size:</string>
+    <string name="max_moves">Max number of moves:</string>
+    <string name="reset">Reset</string>
+    <string name="next">Next</string>
+</resources>
